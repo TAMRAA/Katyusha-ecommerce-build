@@ -75,7 +75,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Navbar */}
-      <div className="bg-orange-600 rounded-xl">
+      <div className="bg-orange-500 rounded-t-3xl ">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-20 justify-between relative px-4">
             {/* Left: User / Sign In */}
@@ -250,7 +250,7 @@ export default function Header() {
       )}
 
       {/* Desktop Categories Navbar */}
-      <div className="hidden md:block sticky top-20 z-40 bg-yellow-50 border-b border-gray-200 rounded-3xl">
+      <div className="hidden md:block sticky top-20 z-40 0 bg-yellow-50 border-b-orange-400 border-gray-200 rounded-b-4xl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center justify-center space-x-8 h-12">
             {navigation.map((item) => (
@@ -259,7 +259,7 @@ export default function Header() {
                 href={item.href}
                 className={`relative text-sm font-medium pb-3 transition-colors ${
                   item.name === "PROMO"
-                    ? "text-emerald-600 font-semibold"
+                    ? "text-green-600 font-serif"
                     : isActive(item.href)
                       ? "text-orange-500 border-b-2 border-gray-900"
                       : "text-gray-900 hover:text-orange-500"
