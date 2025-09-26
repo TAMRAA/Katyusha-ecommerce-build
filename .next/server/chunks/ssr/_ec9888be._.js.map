@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/tamra/Desktop/Katyusha-ecommerce/ecommerce-build/components/Loader.tsx"],"sourcesContent":["\nfunction Loader(){\n  return (\n    <div className=\"flex justify-center items-center h-screen\">\n      <div className=\"animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900\"></div>\n    </div>\n  )\n}\n\nexport default Loader"],"names":[],"mappings":";;;;;;AACA,SAAS;IACP,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC;YAAI,WAAU;;;;;;;;;;;AAGrB;uCAEe","debugId":null}},
+    {"offset": {"line": 31, "column": 0}, "map": {"version":3,"sources":["file:///Users/tamra/Desktop/Katyusha-ecommerce/ecommerce-build/app/%28store%29/loading.tsx"],"sourcesContent":["import Loader from \"@/components/Loader\";\n\nfunction Loading() {\n  return <Loader />;\n}\n\nexport default Loading;\n"],"names":[],"mappings":";;;;;AAAA;;;AAEA,SAAS;IACP,qBAAO,8OAAC,gIAAM;;;;;AAChB;uCAEe","debugId":null}}]
+}
