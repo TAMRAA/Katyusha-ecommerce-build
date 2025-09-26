@@ -618,6 +618,7 @@ function Header() {
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                                     variant: "ghost",
                                                     size: "icon",
+                                                    className: "text-white",
                                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                                         className: "h-6 w-6"
                                                     }, void 0, false, {
@@ -842,7 +843,7 @@ function Header() {
                                 value: searchQuery,
                                 onChange: (e)=>setSearchQuery(e.target.value),
                                 placeholder: "Search for products...",
-                                className: "flex-1 bg-gray-100 text-gray-800 px-4 py-3 rounded-l-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
+                                className: "flex-1 bg-gray-100 text-gray-800 px-4 py-3 rounded-l-xl border border-gray-300 focus:outline-none focus:ring-1 focus:ring-orange-500 text-base"
                             }, void 0, false, {
                                 fileName: "[project]/components/Header.tsx",
                                 lineNumber: 234,
@@ -850,7 +851,7 @@ function Header() {
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                 type: "submit",
-                                className: "px-5 py-3 bg-orange-500 hover:bg-gray-900 text-white rounded-r-xl font-medium text-base",
+                                className: "px-5 py-3 bg-gray-900 text-white hover:bg-orange-400 hover: hover:text-gray-900 rounded-r-xl font-medium text-base",
                                 children: "Search"
                             }, void 0, false, {
                                 fileName: "[project]/components/Header.tsx",

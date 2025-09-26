@@ -148,7 +148,7 @@ export default function Header() {
               {/* Hamburger Menu */}
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon">
+                  <Button variant="ghost" size="icon" className="text-white">
                     <Menu className="h-6 w-6" />
                   </Button>
                 </SheetTrigger>
@@ -237,11 +237,11 @@ export default function Header() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search for products..."
-              className="flex-1 bg-gray-100 text-gray-800 px-4 py-3 rounded-l-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
+              className="flex-1 bg-gray-100 text-gray-800 px-4 py-3 rounded-l-xl border border-gray-300 focus:outline-none focus:ring-1 focus:ring-orange-500 text-base"
             />
             <button
               type="submit"
-              className="px-5 py-3 bg-orange-500 hover:bg-gray-900 text-white rounded-r-xl font-medium text-base"
+              className="px-5 py-3 bg-gray-900 text-white hover:bg-orange-400 hover: hover:text-gray-900 rounded-r-xl font-medium text-base"
             >
               Search
             </button>
