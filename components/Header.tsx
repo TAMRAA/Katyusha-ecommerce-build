@@ -11,17 +11,14 @@ import {
   Search as SearchIcon,
   ChevronDown,
   ShoppingCart,
+  X,
 } from "lucide-react";
-import {
-  ClerkLoaded,
-  SignedIn,
-  SignInButton,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkLoaded, SignedIn, SignInButton, UserButton } from "@clerk/nextjs";
 import useBasketStore from "@/app/(store)/store/store";
 import { useUser as useClerkUser } from "@clerk/nextjs";
 
 export default function Header() {
+  const [isMounted, setIsMounted] = useState(false); // Prevent SSR hydration mismatch
   const [isOpen, setIsOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -38,7 +35,7 @@ export default function Header() {
   const navigation = [
     { name: "Shoes", href: "/categories/Shoes" },
     { name: "Streetwear", href: "/categories/Streetwear" },
-    { name: "Skateboard", href: "/categories/Skateboard" },
+    { name: "Skateboard", href: "/categories/jeans" },
     { name: "Snowboard", href: "/categories/Snowboard" },
     { name: "Accessori", href: "/categories/Accessori" },
     { name: "Marchi", href: "/categories/Marchi" },
@@ -58,6 +55,10 @@ export default function Header() {
   };
 
   useEffect(() => {
+    setIsMounted(true); // Enable client-side rendering
+  }, []);
+
+  useEffect(() => {
     if (showSearch && searchInputRef.current) searchInputRef.current.focus();
   }, [showSearch]);
 
@@ -69,10 +70,12 @@ export default function Header() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  if (!isMounted) return null;
+
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Navbar */}
-      <div className="bg-orange-500 border-b border-gray-200">
+      <div className="bg-orange-500 rounded-xl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-20 justify-between relative px-4">
             {/* Left: User / Sign In */}
@@ -151,7 +154,7 @@ export default function Header() {
                 </SheetTrigger>
                 <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                   <nav className="flex flex-col space-y-4 mt-8">
-                    {/* Orders & Basket (both mobile & desktop) */}
+                    {/* Orders & Basket */}
                     <div className="flex flex-col space-y-2">
                       <ClerkLoaded>
                         <SignedIn>
@@ -209,8 +212,45 @@ export default function Header() {
         </div>
       </div>
 
+      {/* Search Overlay with Decorative Icons */}
+      {showSearch && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-start bg-white p-4">
+          <button
+            onClick={() => setShowSearch(false)}
+            className="absolute top-8 right-8 p-2 text-gray-600 hover:text-gray-900 transition-colors"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          {/* Decorative Icons */}
+          <div className="flex gap-6 mt-6 mb-4 text-gray-500">
+            <PackageIcon className="w-6 h-6" />
+            <ShoppingCart className="w-6 h-6" />
+            <SearchIcon className="w-6 h-6" />
+          </div>
+
+          {/* Search Input */}
+          <form className="flex w-full max-w-lg" onSubmit={handleSearchSubmit}>
+            <input
+              ref={searchInputRef}
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search for products..."
+              className="flex-1 bg-gray-100 text-gray-800 px-4 py-3 rounded-l-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
+            />
+            <button
+              type="submit"
+              className="px-5 py-3 bg-orange-500 hover:bg-gray-900 text-white rounded-r-xl font-medium text-base"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+      )}
+
       {/* Desktop Categories Navbar */}
-      <div className="hidden md:block sticky top-20 z-40 bg-orange-500 border-b border-gray-200">
+      <div className="hidden md:block sticky top-20 z-40 bg-yellow-50 border-b border-gray-200 rounded-3xl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center justify-center space-x-8 h-12">
             {navigation.map((item) => (
@@ -221,8 +261,8 @@ export default function Header() {
                   item.name === "PROMO"
                     ? "text-emerald-600 font-semibold"
                     : isActive(item.href)
-                      ? "text-gray-900 border-b-2 border-orange-500"
-                      : "text-gray-300 hover:text-orange-500"
+                      ? "text-orange-500 border-b-2 border-gray-900"
+                      : "text-gray-900 hover:text-orange-500"
                 }`}
               >
                 {item.name}
@@ -234,6 +274,7 @@ export default function Header() {
     </header>
   );
 }
+
 function useUser(): { user: any } {
   const { user } = useClerkUser();
   return { user };
