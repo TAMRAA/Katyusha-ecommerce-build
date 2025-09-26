@@ -2,7 +2,9 @@ import BlackFridayBanner from "@/components/BlackFridayBanner";
 import ProductsView from "@/components/ProductsView";
 import { getAllCategories } from "@/sanity/lib/products/getAllCategories";
 import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
-import { HeroSlider } from "./hero/hero-slider";
+import { HeroSlider } from "./hero/page";
+import { PhotoCollage } from "./collage/page";
+import Footer from "./footer/page";
 export const dynamic = "force-static";
 export const revalidate = 3600;
 
@@ -24,6 +26,8 @@ export default async function Home() {
         <ProductsView products={products} categories={categories} />
       </div>
       <BlackFridayBanner />
+      <PhotoCollage />
+      <Footer/>
     </div>
   );
 }
