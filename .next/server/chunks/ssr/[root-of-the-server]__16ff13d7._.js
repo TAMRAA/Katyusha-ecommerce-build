@@ -67,13 +67,13 @@ module.exports = [
 //     router.push(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
 //   };
 //   return (
-//     <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100">
+//     <header className="sticky top-0 z-50 w-full bg-gray-900 border-b border-orange-500">
 //       {/* Top bar */}
-//       <div className="border-b border-gray-50 bg-orange-500">
-//         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="flex h-16 items-center justify-between relative">
+//       <div className="text-white ">
+//         <div className="container mx-auto px-4 sm:px-6 lg:px-8 ">
+//           <div className="flex h-19 items-center justify-between relative border border-orange-500 rounded-lg">
 //             {/* Desktop User / Orders / Basket */}
-//             <div className="hidden md:flex items-center space-x-2 min-w-[120px]">
+//             <div className="flex md:flex justify-between items-center space-x-2 min-w-[120px] border-orange-500 ">
 //               <ClerkLoaded>
 //                 {user ? (
 //                   <UserButton />
@@ -89,7 +89,7 @@ module.exports = [
 //                 <SignedIn>
 //                   <Link
 //                     href="/orders"
-//                     className="flex items-center text-gray-800 font-medium p-2 rounded-lg hover:bg-gray-100 transition-colors"
+//                     className="flex items-center text-white font-medium p-2 rounded-lg hover:bg-white hover:text-gray-900 transition-colors"
 //                   >
 //                     <PackageIcon className="w-5 h-5" />
 //                   </Link>
@@ -97,25 +97,11 @@ module.exports = [
 //               </ClerkLoaded>
 //               <Link
 //                 href="/basket"
-//                 className="relative flex items-center text-gray-800 font-medium p-2 rounded-lg hover:bg-gray-100 transition-colors"
+//                 className="relative flex items-center text-white font-medium p-2 rounded-lg hover:bg-white hover:text-gray-900 ransition-colors"
 //               >
 //                 <TrolleyIcon className="w-5 h-5" />
 //                 {itemCount > 0 && (
 //                   <span className="absolute -top-2 -right-2 bg-gray-800 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
-//                     {itemCount}
-//                   </span>
-//                 )}
-//               </Link>
-//             </div>
-//             {/* Mobile Basket */}
-//             <div className="flex md:hidden items-center">
-//               <Link
-//                 href="/basket"
-//                 className="relative flex items-center text-white p-2 rounded-lg"
-//               >
-//                 <TrolleyIcon className="w-6 h-6" />
-//                 {itemCount > 0 && (
-//                   <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
 //                     {itemCount}
 //                   </span>
 //                 )}
@@ -139,38 +125,45 @@ module.exports = [
 //                 <Button
 //                   variant="ghost"
 //                   size="icon"
-//                   className="text-gray-600"
+//                   className="text-white "
 //                   onClick={() => setShowSearch(true)}
 //                 >
 //                   <SearchIcon className="h-6 w-6" />
 //                 </Button>
 //               ) : (
-//                 <div className="fixed inset-0 z-50 bg-white flex items-center justify-center p-4">
-//                   <div className="relative w-full max-w-lg">
-//                     {/* Close X */}
-//                     <button
-//                       onClick={() => setShowSearch(false)}
-//                       className="absolute top-0 right-0 p-2 text-gray-600 hover:text-gray-900"
-//                     >
-//                       <X className="w-6 h-6" />
-//                     </button>
-//                     {/* Icons */}
-//                     <div className="flex items-center justify-center gap-10 text-gray-600 mb-6">
-//                       {/* Replace with your 3 icon blocks */}
+//                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-white p-4">
+//                   {/* Close X at top-right */}
+//                   <button
+//                     onClick={() => setShowSearch(false)}
+//                     className="absolute top-8 right-8 md:top-6 md:right-12 p-2 text-gray-600 hover:text-gray-900 transition-colors"
+//                     aria-label="Close search"
+//                   >
+//                     <X className="w-7 h-7" />
+//                   </button>
+//                   <div className="w-full max-w-lg mx-auto flex flex-col items-center">
+//                     {/* Icon row (customize as needed) */}
+//                     <div className="flex items-center justify-center gap-10 text-gray-500 mb-8 mt-2">
+//                       <PackageIcon className="w-6 h-6" />
+//                       <TrolleyIcon className="w-6 h-6" />
+//                       <SearchIcon className="w-6 h-6" />
 //                     </div>
 //                     {/* Search form */}
-//                     <form className="flex w-full" onSubmit={handleSearchSubmit}>
+//                     <form
+//                       className="flex w-full"
+//                       onSubmit={handleSearchSubmit}
+//                       autoComplete="off"
+//                     >
 //                       <input
 //                         ref={searchInputRef}
 //                         type="text"
 //                         value={searchQuery}
 //                         onChange={(e) => setSearchQuery(e.target.value)}
 //                         placeholder="Search for products..."
-//                         className="flex-1 bg-gray-100 text-gray-800 px-4 py-3 rounded-l-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500"
+//                         className="flex-1 bg-gray-100 text-gray-800 px-4 py-3 rounded-l-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500 text-base"
 //                       />
 //                       <button
 //                         type="submit"
-//                         className="px-5 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-r-xl font-medium"
+//                         className="px-5 py-3 bg-orange-500 hover:bg-gray-900 text-white rounded-r-xl font-medium text-base"
 //                       >
 //                         Search
 //                       </button>
@@ -182,7 +175,7 @@ module.exports = [
 //               <Sheet open={isOpen} onOpenChange={setIsOpen}>
 //                 <SheetTrigger asChild>
 //                   <Button variant="ghost" size="icon">
-//                     <Menu className="h-5 w-5" />
+//                     <Menu className="h-6 w-6" />
 //                   </Button>
 //                 </SheetTrigger>
 //                 <SheetContent side="right" className="w-[300px] sm:w-[400px]">
