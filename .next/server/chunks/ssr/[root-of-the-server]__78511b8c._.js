@@ -403,15 +403,15 @@ function Header() {
     const navigation = [
         {
             name: "Shoes",
-            href: "/categories/Shoes"
+            href: "/categories/shoes"
         },
         {
-            name: "Streetwear",
-            href: "/categories/Streetwear"
+            name: "Jeans",
+            href: "/categories/jeans"
         },
         {
             name: "Skateboard",
-            href: "/categories/jeans"
+            href: "/categories/skateboard"
         },
         {
             name: "Snowboard",

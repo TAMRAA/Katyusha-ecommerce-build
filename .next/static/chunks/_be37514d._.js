@@ -106,9 +106,9 @@ function ProductThumb(param) {
                         columnNumber: 11
                     }, this),
                     isOutOfStock && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 flex items-center justify-center bg-black bg-opacity-50",
+                        className: "absolute inset-0 flex items-center justify-center",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-white font-bold text-lg",
+                            className: "text-gray-900 font-bold text-lg",
                             children: "Out of Stock"
                         }, void 0, false, {
                             fileName: "[project]/components/ProductThumb.tsx",
@@ -138,7 +138,7 @@ function ProductThumb(param) {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "mt-2 text-sm text-gray-600 line-clamp-2",
+                        className: "mt-2 text-sm text-gray-900 line-clamp-2",
                         children: ((_product_description = product.description) === null || _product_description === void 0 ? void 0 : _product_description.map((block)=>{
                             var _block_children;
                             return block._type === "block" ? (_block_children = block.children) === null || _block_children === void 0 ? void 0 : _block_children.map((child)=>child.text).join("") : "";

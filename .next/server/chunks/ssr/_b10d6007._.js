@@ -94,9 +94,9 @@ function ProductThumb({ product }) {
                         columnNumber: 11
                     }, this),
                     isOutOfStock && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 flex items-center justify-center bg-black bg-opacity-50",
+                        className: "absolute inset-0 flex items-center justify-center",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-white font-bold text-lg",
+                            className: "text-gray-900 font-bold text-lg",
                             children: "Out of Stock"
                         }, void 0, false, {
                             fileName: "[project]/components/ProductThumb.tsx",
@@ -126,7 +126,7 @@ function ProductThumb({ product }) {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "mt-2 text-sm text-gray-600 line-clamp-2",
+                        className: "mt-2 text-sm text-gray-900 line-clamp-2",
                         children: product.description?.map((block)=>block._type === "block" ? block.children?.map((child)=>child.text).join("") : "").join(" ") || "No description available"
                     }, void 0, false, {
                         fileName: "[project]/components/ProductThumb.tsx",

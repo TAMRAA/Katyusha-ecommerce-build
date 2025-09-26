@@ -33,9 +33,9 @@ export default function Header() {
   );
 
   const navigation = [
-    { name: "Shoes", href: "/categories/Shoes" },
-    { name: "Streetwear", href: "/categories/Streetwear" },
-    { name: "Skateboard", href: "/categories/jeans" },
+    { name: "Shoes", href: "/categories/shoes" },
+    { name: "Jeans", href: "/categories/jeans" },
+    { name: "Skateboard", href: "/categories/skateboard" },
     { name: "Snowboard", href: "/categories/Snowboard" },
     { name: "Accessori", href: "/categories/Accessori" },
     { name: "Marchi", href: "/categories/Marchi" },
