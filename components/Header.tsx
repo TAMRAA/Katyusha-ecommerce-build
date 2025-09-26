@@ -75,7 +75,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full">
       {/* Top Navbar */}
-      <div className="bg-orange-500 rounded-xl">
+      <div className="bg-orange-600 rounded-xl">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-20 justify-between relative px-4">
             {/* Left: User / Sign In */}

@@ -1,3 +1,498 @@
-module.exports=[792509,(e,t,r)=>{t.exports=e.x("url",()=>require("url"))},702609,(e,t,r)=>{var n=e.r(792509).parse,o=e.r(427699),s=e.r(524836),i=e.r(921517),a=e.r(224361),c=["pfx","key","passphrase","cert","ca","ciphers","rejectUnauthorized","secureProtocol","servername","checkServerIdentity"],l=[239,187,191],u=/^(cookie|authorization)$/i;function p(e,t){var r,o=p.CONNECTING,a=t&&t.headers,v=!1;Object.defineProperty(this,"readyState",{get:function(){return o}}),Object.defineProperty(this,"url",{get:function(){return e}});var d=this;function y(t){o!==p.CLOSED&&(o=p.CONNECTING,N("error",new f("error",{message:t})),b&&(e=b,b=null,v=!1),setTimeout(function(){o!==p.CONNECTING||d.connectionInProgress||(d.connectionInProgress=!0,O())},d.reconnectInterval))}d.reconnectInterval=1e3,d.connectionInProgress=!1;var g="";a&&a["Last-Event-ID"]&&(g=a["Last-Event-ID"],delete a["Last-Event-ID"]);var C=!1,E="",m="",b=null;function O(){var P=n(e),I="https:"===P.protocol;if(P.headers={"Cache-Control":"no-cache",Accept:"text/event-stream"},g&&(P.headers["Last-Event-ID"]=g),a){var L=v?function(e){var t={};for(var r in e)u.test(r)||(t[r]=e[r]);return t}(a):a;for(var w in L){var x=L[w];x&&(P.headers[w]=x)}}if(P.rejectUnauthorized=!(t&&!t.rejectUnauthorized),t&&void 0!==t.createConnection&&(P.createConnection=t.createConnection),t&&t.proxy){var j=n(t.proxy);P.protocol=(I="https:"===j.protocol)?"https:":"http:",P.path=e,P.headers.Host=P.host,P.hostname=j.hostname,P.host=j.host,P.port=j.port}if(t&&t.https){for(var D in t.https)if(-1!==c.indexOf(D)){var S=t.https[D];void 0!==S&&(P[D]=S)}}t&&void 0!==t.withCredentials&&(P.withCredentials=t.withCredentials),(r=(I?s:i).request(P,function(t){if(d.connectionInProgress=!1,500===t.statusCode||502===t.statusCode||503===t.statusCode||504===t.statusCode){N("error",new f("error",{status:t.statusCode,message:t.statusMessage})),y();return}if(301===t.statusCode||302===t.statusCode||307===t.statusCode){var r,n,s=t.headers.location;return s?(v=new URL(e).origin!==new URL(s).origin,307===t.statusCode&&(b=e),e=s,void process.nextTick(O)):void N("error",new f("error",{status:t.statusCode,message:t.statusMessage}))}if(200!==t.statusCode)return N("error",new f("error",{status:t.statusCode,message:t.statusMessage})),d.close();o=p.OPEN,t.on("close",function(){t.removeAllListeners("close"),t.removeAllListeners("end"),y()}),t.on("end",function(){t.removeAllListeners("close"),t.removeAllListeners("end"),y()}),N("open",new f("open"));var i=0,a=-1,c=0,u=0;t.on("data",function(t){if(r)t.length>r.length-u&&((c=2*r.length+t.length)>262144&&(c=r.length+t.length+262144),n=Buffer.alloc(c),r.copy(n,0,0,u),r=n),t.copy(r,u),u+=t.length;else{var o;o=r=t,l.every(function(e,t){return o[t]===e})&&(r=r.slice(l.length)),u=r.length}for(var s=0,p=u;s<p;){C&&(10===r[s]&&++s,C=!1);for(var f,v=-1,y=a,b=i;v<0&&b<p;++b)58===(f=r[b])?y<0&&(y=b-s):13===f?(C=!0,v=b-s):10===f&&(v=b-s);if(v<0){i=p-s,a=y;break}i=0,a=-1,function(t,r,n,o){if(0===o){if(E.length>0){var s=m||"message";N(s,new h(s,{data:E.slice(0,-1),lastEventId:g,origin:new URL(e).origin})),E=""}m=void 0}else if(n>0){var i=n<0,a=0,c=t.slice(r,r+(i?o:n)).toString();a=i?o:32!==t[r+n+1]?n+1:n+2,r+=a;var l=o-a,u=t.slice(r,r+l).toString();if("data"===c)E+=u+"\n";else if("event"===c)m=u;else if("id"===c)g=u;else if("retry"===c){var p=parseInt(u,10);Number.isNaN(p)||(d.reconnectInterval=p)}}}(r,s,y,v),s+=v+1}s===p?(r=void 0,u=0):s>0&&(u=(r=r.slice(s,u)).length)})})).on("error",function(e){d.connectionInProgress=!1,y(e.message)}),r.setNoDelay&&r.setNoDelay(!0),r.end()}function N(){d.listeners(arguments[0]).length>0&&d.emit.apply(d,arguments)}O(),this._close=function(){o!==p.CLOSED&&(o=p.CLOSED,r.abort&&r.abort(),r.xhr&&r.xhr.abort&&r.xhr.abort())}}function f(e,t){if(Object.defineProperty(this,"type",{writable:!1,value:e,enumerable:!0}),t)for(var r in t)t.hasOwnProperty(r)&&Object.defineProperty(this,r,{writable:!1,value:t[r],enumerable:!0})}function h(e,t){for(var r in Object.defineProperty(this,"type",{writable:!1,value:e,enumerable:!0}),t)t.hasOwnProperty(r)&&Object.defineProperty(this,r,{writable:!1,value:t[r],enumerable:!0})}t.exports=p,a.inherits(p,o.EventEmitter),p.prototype.constructor=p,["open","error","message"].forEach(function(e){Object.defineProperty(p.prototype,"on"+e,{get:function(){var t=this.listeners(e)[0];return t?t._listener?t._listener:t:void 0},set:function(t){this.removeAllListeners(e),this.addEventListener(e,t)}})}),Object.defineProperty(p,"CONNECTING",{enumerable:!0,value:0}),Object.defineProperty(p,"OPEN",{enumerable:!0,value:1}),Object.defineProperty(p,"CLOSED",{enumerable:!0,value:2}),p.prototype.CONNECTING=0,p.prototype.OPEN=1,p.prototype.CLOSED=2,p.prototype.close=function(){this._close()},p.prototype.addEventListener=function(e,t){"function"==typeof t&&(t._listener=t,this.on(e,t))},p.prototype.dispatchEvent=function(e){if(!e.type)throw Error("UNSPECIFIED_EVENT_TYPE_ERR");this.emit(e.type,e.detail)},p.prototype.removeEventListener=function(e,t){"function"==typeof t&&(t._listener=void 0,this.removeListener(e,t))}},264441,(e,t,r)=>{t.exports=e.r(702609)}];
+module.exports = [
+"[externals]/url [external] (url, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("url", () => require("url"));
+
+module.exports = mod;
+}),
+"[project]/node_modules/eventsource/lib/eventsource.js [app-route] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var parse = __turbopack_context__.r("[externals]/url [external] (url, cjs)").parse;
+var events = __turbopack_context__.r("[externals]/events [external] (events, cjs)");
+var https = __turbopack_context__.r("[externals]/https [external] (https, cjs)");
+var http = __turbopack_context__.r("[externals]/http [external] (http, cjs)");
+var util = __turbopack_context__.r("[externals]/util [external] (util, cjs)");
+var httpsOptions = [
+    'pfx',
+    'key',
+    'passphrase',
+    'cert',
+    'ca',
+    'ciphers',
+    'rejectUnauthorized',
+    'secureProtocol',
+    'servername',
+    'checkServerIdentity'
+];
+var bom = [
+    239,
+    187,
+    191
+];
+var colon = 58;
+var space = 32;
+var lineFeed = 10;
+var carriageReturn = 13;
+// Beyond 256KB we could not observe any gain in performance
+var maxBufferAheadAllocation = 1024 * 256;
+// Headers matching the pattern should be removed when redirecting to different origin
+var reUnsafeHeader = /^(cookie|authorization)$/i;
+function hasBom(buf) {
+    return bom.every(function(charCode, index) {
+        return buf[index] === charCode;
+    });
+}
+/**
+ * Creates a new EventSource object
+ *
+ * @param {String} url the URL to which to connect
+ * @param {Object} [eventSourceInitDict] extra init params. See README for details.
+ * @api public
+ **/ function EventSource(url, eventSourceInitDict) {
+    var readyState = EventSource.CONNECTING;
+    var headers = eventSourceInitDict && eventSourceInitDict.headers;
+    var hasNewOrigin = false;
+    Object.defineProperty(this, 'readyState', {
+        get: function() {
+            return readyState;
+        }
+    });
+    Object.defineProperty(this, 'url', {
+        get: function() {
+            return url;
+        }
+    });
+    var self = this;
+    self.reconnectInterval = 1000;
+    self.connectionInProgress = false;
+    function onConnectionClosed(message) {
+        if (readyState === EventSource.CLOSED) return;
+        readyState = EventSource.CONNECTING;
+        _emit('error', new Event('error', {
+            message: message
+        }));
+        // The url may have been changed by a temporary redirect. If that's the case,
+        // revert it now, and flag that we are no longer pointing to a new origin
+        if (reconnectUrl) {
+            url = reconnectUrl;
+            reconnectUrl = null;
+            hasNewOrigin = false;
+        }
+        setTimeout(function() {
+            if (readyState !== EventSource.CONNECTING || self.connectionInProgress) {
+                return;
+            }
+            self.connectionInProgress = true;
+            connect();
+        }, self.reconnectInterval);
+    }
+    var req;
+    var lastEventId = '';
+    if (headers && headers['Last-Event-ID']) {
+        lastEventId = headers['Last-Event-ID'];
+        delete headers['Last-Event-ID'];
+    }
+    var discardTrailingNewline = false;
+    var data = '';
+    var eventName = '';
+    var reconnectUrl = null;
+    function connect() {
+        var options = parse(url);
+        var isSecure = options.protocol === 'https:';
+        options.headers = {
+            'Cache-Control': 'no-cache',
+            'Accept': 'text/event-stream'
+        };
+        if (lastEventId) options.headers['Last-Event-ID'] = lastEventId;
+        if (headers) {
+            var reqHeaders = hasNewOrigin ? removeUnsafeHeaders(headers) : headers;
+            for(var i in reqHeaders){
+                var header = reqHeaders[i];
+                if (header) {
+                    options.headers[i] = header;
+                }
+            }
+        }
+        // Legacy: this should be specified as `eventSourceInitDict.https.rejectUnauthorized`,
+        // but for now exists as a backwards-compatibility layer
+        options.rejectUnauthorized = !(eventSourceInitDict && !eventSourceInitDict.rejectUnauthorized);
+        if (eventSourceInitDict && eventSourceInitDict.createConnection !== undefined) {
+            options.createConnection = eventSourceInitDict.createConnection;
+        }
+        // If specify http proxy, make the request to sent to the proxy server,
+        // and include the original url in path and Host headers
+        var useProxy = eventSourceInitDict && eventSourceInitDict.proxy;
+        if (useProxy) {
+            var proxy = parse(eventSourceInitDict.proxy);
+            isSecure = proxy.protocol === 'https:';
+            options.protocol = isSecure ? 'https:' : 'http:';
+            options.path = url;
+            options.headers.Host = options.host;
+            options.hostname = proxy.hostname;
+            options.host = proxy.host;
+            options.port = proxy.port;
+        }
+        // If https options are specified, merge them into the request options
+        if (eventSourceInitDict && eventSourceInitDict.https) {
+            for(var optName in eventSourceInitDict.https){
+                if (httpsOptions.indexOf(optName) === -1) {
+                    continue;
+                }
+                var option = eventSourceInitDict.https[optName];
+                if (option !== undefined) {
+                    options[optName] = option;
+                }
+            }
+        }
+        // Pass this on to the XHR
+        if (eventSourceInitDict && eventSourceInitDict.withCredentials !== undefined) {
+            options.withCredentials = eventSourceInitDict.withCredentials;
+        }
+        req = (isSecure ? https : http).request(options, function(res) {
+            self.connectionInProgress = false;
+            // Handle HTTP errors
+            if (res.statusCode === 500 || res.statusCode === 502 || res.statusCode === 503 || res.statusCode === 504) {
+                _emit('error', new Event('error', {
+                    status: res.statusCode,
+                    message: res.statusMessage
+                }));
+                onConnectionClosed();
+                return;
+            }
+            // Handle HTTP redirects
+            if (res.statusCode === 301 || res.statusCode === 302 || res.statusCode === 307) {
+                var location = res.headers.location;
+                if (!location) {
+                    // Server sent redirect response without Location header.
+                    _emit('error', new Event('error', {
+                        status: res.statusCode,
+                        message: res.statusMessage
+                    }));
+                    return;
+                }
+                var prevOrigin = new URL(url).origin;
+                var nextOrigin = new URL(location).origin;
+                hasNewOrigin = prevOrigin !== nextOrigin;
+                if (res.statusCode === 307) reconnectUrl = url;
+                url = location;
+                process.nextTick(connect);
+                return;
+            }
+            if (res.statusCode !== 200) {
+                _emit('error', new Event('error', {
+                    status: res.statusCode,
+                    message: res.statusMessage
+                }));
+                return self.close();
+            }
+            readyState = EventSource.OPEN;
+            res.on('close', function() {
+                res.removeAllListeners('close');
+                res.removeAllListeners('end');
+                onConnectionClosed();
+            });
+            res.on('end', function() {
+                res.removeAllListeners('close');
+                res.removeAllListeners('end');
+                onConnectionClosed();
+            });
+            _emit('open', new Event('open'));
+            // text/event-stream parser adapted from webkit's
+            // Source/WebCore/page/EventSource.cpp
+            var buf;
+            var newBuffer;
+            var startingPos = 0;
+            var startingFieldLength = -1;
+            var newBufferSize = 0;
+            var bytesUsed = 0;
+            res.on('data', function(chunk) {
+                if (!buf) {
+                    buf = chunk;
+                    if (hasBom(buf)) {
+                        buf = buf.slice(bom.length);
+                    }
+                    bytesUsed = buf.length;
+                } else {
+                    if (chunk.length > buf.length - bytesUsed) {
+                        newBufferSize = buf.length * 2 + chunk.length;
+                        if (newBufferSize > maxBufferAheadAllocation) {
+                            newBufferSize = buf.length + chunk.length + maxBufferAheadAllocation;
+                        }
+                        newBuffer = Buffer.alloc(newBufferSize);
+                        buf.copy(newBuffer, 0, 0, bytesUsed);
+                        buf = newBuffer;
+                    }
+                    chunk.copy(buf, bytesUsed);
+                    bytesUsed += chunk.length;
+                }
+                var pos = 0;
+                var length = bytesUsed;
+                while(pos < length){
+                    if (discardTrailingNewline) {
+                        if (buf[pos] === lineFeed) {
+                            ++pos;
+                        }
+                        discardTrailingNewline = false;
+                    }
+                    var lineLength = -1;
+                    var fieldLength = startingFieldLength;
+                    var c;
+                    for(var i = startingPos; lineLength < 0 && i < length; ++i){
+                        c = buf[i];
+                        if (c === colon) {
+                            if (fieldLength < 0) {
+                                fieldLength = i - pos;
+                            }
+                        } else if (c === carriageReturn) {
+                            discardTrailingNewline = true;
+                            lineLength = i - pos;
+                        } else if (c === lineFeed) {
+                            lineLength = i - pos;
+                        }
+                    }
+                    if (lineLength < 0) {
+                        startingPos = length - pos;
+                        startingFieldLength = fieldLength;
+                        break;
+                    } else {
+                        startingPos = 0;
+                        startingFieldLength = -1;
+                    }
+                    parseEventStreamLine(buf, pos, fieldLength, lineLength);
+                    pos += lineLength + 1;
+                }
+                if (pos === length) {
+                    buf = void 0;
+                    bytesUsed = 0;
+                } else if (pos > 0) {
+                    buf = buf.slice(pos, bytesUsed);
+                    bytesUsed = buf.length;
+                }
+            });
+        });
+        req.on('error', function(err) {
+            self.connectionInProgress = false;
+            onConnectionClosed(err.message);
+        });
+        if (req.setNoDelay) req.setNoDelay(true);
+        req.end();
+    }
+    connect();
+    function _emit() {
+        if (self.listeners(arguments[0]).length > 0) {
+            self.emit.apply(self, arguments);
+        }
+    }
+    this._close = function() {
+        if (readyState === EventSource.CLOSED) return;
+        readyState = EventSource.CLOSED;
+        if (req.abort) req.abort();
+        if (req.xhr && req.xhr.abort) req.xhr.abort();
+    };
+    function parseEventStreamLine(buf, pos, fieldLength, lineLength) {
+        if (lineLength === 0) {
+            if (data.length > 0) {
+                var type = eventName || 'message';
+                _emit(type, new MessageEvent(type, {
+                    data: data.slice(0, -1),
+                    lastEventId: lastEventId,
+                    origin: new URL(url).origin
+                }));
+                data = '';
+            }
+            eventName = void 0;
+        } else if (fieldLength > 0) {
+            var noValue = fieldLength < 0;
+            var step = 0;
+            var field = buf.slice(pos, pos + (noValue ? lineLength : fieldLength)).toString();
+            if (noValue) {
+                step = lineLength;
+            } else if (buf[pos + fieldLength + 1] !== space) {
+                step = fieldLength + 1;
+            } else {
+                step = fieldLength + 2;
+            }
+            pos += step;
+            var valueLength = lineLength - step;
+            var value = buf.slice(pos, pos + valueLength).toString();
+            if (field === 'data') {
+                data += value + '\n';
+            } else if (field === 'event') {
+                eventName = value;
+            } else if (field === 'id') {
+                lastEventId = value;
+            } else if (field === 'retry') {
+                var retry = parseInt(value, 10);
+                if (!Number.isNaN(retry)) {
+                    self.reconnectInterval = retry;
+                }
+            }
+        }
+    }
+}
+module.exports = EventSource;
+util.inherits(EventSource, events.EventEmitter);
+EventSource.prototype.constructor = EventSource; // make stacktraces readable
+[
+    'open',
+    'error',
+    'message'
+].forEach(function(method) {
+    Object.defineProperty(EventSource.prototype, 'on' + method, {
+        /**
+     * Returns the current listener
+     *
+     * @return {Mixed} the set function or undefined
+     * @api private
+     */ get: function get() {
+            var listener = this.listeners(method)[0];
+            return listener ? listener._listener ? listener._listener : listener : undefined;
+        },
+        /**
+     * Start listening for events
+     *
+     * @param {Function} listener the listener
+     * @return {Mixed} the set function or undefined
+     * @api private
+     */ set: function set(listener) {
+            this.removeAllListeners(method);
+            this.addEventListener(method, listener);
+        }
+    });
+});
+/**
+ * Ready states
+ */ Object.defineProperty(EventSource, 'CONNECTING', {
+    enumerable: true,
+    value: 0
+});
+Object.defineProperty(EventSource, 'OPEN', {
+    enumerable: true,
+    value: 1
+});
+Object.defineProperty(EventSource, 'CLOSED', {
+    enumerable: true,
+    value: 2
+});
+EventSource.prototype.CONNECTING = 0;
+EventSource.prototype.OPEN = 1;
+EventSource.prototype.CLOSED = 2;
+/**
+ * Closes the connection, if one is made, and sets the readyState attribute to 2 (closed)
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/EventSource/close
+ * @api public
+ */ EventSource.prototype.close = function() {
+    this._close();
+};
+/**
+ * Emulates the W3C Browser based WebSocket interface using addEventListener.
+ *
+ * @param {String} type A string representing the event type to listen out for
+ * @param {Function} listener callback
+ * @see https://developer.mozilla.org/en/DOM/element.addEventListener
+ * @see http://dev.w3.org/html5/websockets/#the-websocket-interface
+ * @api public
+ */ EventSource.prototype.addEventListener = function addEventListener(type, listener) {
+    if (typeof listener === 'function') {
+        // store a reference so we can return the original function again
+        listener._listener = listener;
+        this.on(type, listener);
+    }
+};
+/**
+ * Emulates the W3C Browser based WebSocket interface using dispatchEvent.
+ *
+ * @param {Event} event An event to be dispatched
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/dispatchEvent
+ * @api public
+ */ EventSource.prototype.dispatchEvent = function dispatchEvent(event) {
+    if (!event.type) {
+        throw new Error('UNSPECIFIED_EVENT_TYPE_ERR');
+    }
+    // if event is instance of an CustomEvent (or has 'details' property),
+    // send the detail object as the payload for the event
+    this.emit(event.type, event.detail);
+};
+/**
+ * Emulates the W3C Browser based WebSocket interface using removeEventListener.
+ *
+ * @param {String} type A string representing the event type to remove
+ * @param {Function} listener callback
+ * @see https://developer.mozilla.org/en/DOM/element.removeEventListener
+ * @see http://dev.w3.org/html5/websockets/#the-websocket-interface
+ * @api public
+ */ EventSource.prototype.removeEventListener = function removeEventListener(type, listener) {
+    if (typeof listener === 'function') {
+        listener._listener = undefined;
+        this.removeListener(type, listener);
+    }
+};
+/**
+ * W3C Event
+ *
+ * @see http://www.w3.org/TR/DOM-Level-3-Events/#interface-Event
+ * @api private
+ */ function Event(type, optionalProperties) {
+    Object.defineProperty(this, 'type', {
+        writable: false,
+        value: type,
+        enumerable: true
+    });
+    if (optionalProperties) {
+        for(var f in optionalProperties){
+            if (optionalProperties.hasOwnProperty(f)) {
+                Object.defineProperty(this, f, {
+                    writable: false,
+                    value: optionalProperties[f],
+                    enumerable: true
+                });
+            }
+        }
+    }
+}
+/**
+ * W3C MessageEvent
+ *
+ * @see http://www.w3.org/TR/webmessaging/#event-definitions
+ * @api private
+ */ function MessageEvent(type, eventInitDict) {
+    Object.defineProperty(this, 'type', {
+        writable: false,
+        value: type,
+        enumerable: true
+    });
+    for(var f in eventInitDict){
+        if (eventInitDict.hasOwnProperty(f)) {
+            Object.defineProperty(this, f, {
+                writable: false,
+                value: eventInitDict[f],
+                enumerable: true
+            });
+        }
+    }
+}
+/**
+ * Returns a new object of headers that does not include any authorization and cookie headers
+ *
+ * @param {Object} headers An object of headers ({[headerName]: headerValue})
+ * @return {Object} a new object of headers
+ * @api private
+ */ function removeUnsafeHeaders(headers) {
+    var safe = {};
+    for(var key in headers){
+        if (reUnsafeHeader.test(key)) {
+            continue;
+        }
+        safe[key] = headers[key];
+    }
+    return safe;
+}
+}),
+"[project]/node_modules/@sanity/eventsource/node.js [app-route] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = __turbopack_context__.r("[project]/node_modules/eventsource/lib/eventsource.js [app-route] (ecmascript)");
+}),
+];
 
 //# sourceMappingURL=%5Broot-of-the-server%5D__74e963f7._.js.map
