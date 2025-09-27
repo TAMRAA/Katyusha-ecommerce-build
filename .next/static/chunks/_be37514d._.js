@@ -708,26 +708,24 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$
 ;
 ;
 ;
-function Popover(param) {
-    let { ...props } = param;
+function Popover(props) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$popover$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Root"], {
         "data-slot": "popover",
         ...props
     }, void 0, false, {
         fileName: "[project]/components/ui/popover.tsx",
-        lineNumber: 11,
+        lineNumber: 8,
         columnNumber: 10
     }, this);
 }
 _c = Popover;
-function PopoverTrigger(param) {
-    let { ...props } = param;
+function PopoverTrigger(props) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$popover$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Trigger"], {
         "data-slot": "popover-trigger",
         ...props
     }, void 0, false, {
         fileName: "[project]/components/ui/popover.tsx",
-        lineNumber: 17,
+        lineNumber: 14,
         columnNumber: 10
     }, this);
 }
@@ -739,28 +737,27 @@ function PopoverContent(param) {
             "data-slot": "popover-content",
             align: align,
             sideOffset: sideOffset,
-            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-72 origin-(--radix-popover-content-transform-origin) rounded-md border p-4 shadow-md outline-hidden", className),
+            className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("bg-popover text-popover-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-72 rounded-md border p-4 shadow-md outline-hidden", className),
             ...props
         }, void 0, false, {
             fileName: "[project]/components/ui/popover.tsx",
-            lineNumber: 28,
+            lineNumber: 25,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/ui/popover.tsx",
-        lineNumber: 27,
+        lineNumber: 24,
         columnNumber: 5
     }, this);
 }
 _c2 = PopoverContent;
-function PopoverAnchor(param) {
-    let { ...props } = param;
+function PopoverAnchor(props) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$radix$2d$ui$2f$react$2d$popover$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Anchor"], {
         "data-slot": "popover-anchor",
         ...props
     }, void 0, false, {
         fileName: "[project]/components/ui/popover.tsx",
-        lineNumber: 45,
+        lineNumber: 42,
         columnNumber: 10
     }, this);
 }
@@ -805,9 +802,14 @@ function CategorySelectorComponent(param) {
     let { categories } = param;
     var _categories_find;
     _s();
+    const [mounted, setMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [open, setOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [value, setValue] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "CategorySelectorComponent.useEffect": ()=>setMounted(true)
+    }["CategorySelectorComponent.useEffect"], []);
+    if (!mounted) return null;
     var _categories_find_title;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Popover"], {
         open: open,
@@ -816,9 +818,11 @@ function CategorySelectorComponent(param) {
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PopoverTrigger"], {
                 asChild: true,
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                    id: "category-popover-trigger",
+                    "aria-controls": "category-popover",
+                    "aria-expanded": open,
                     variant: "default",
                     role: "combobox",
-                    "aria-expanded": open,
                     className: "w-full max-w-full sm:max-w-xs flex justify-center sm:justify-start items-center space-x-2 bg-gray-900 text-white hover:bg-orange-500 font-semibold py-2.5 px-4 rounded-lg shadow-sm hover:shadow-md transition-all focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
                     children: [
                         value ? (_categories_find_title = (_categories_find = categories.find((category)=>category._id === value)) === null || _categories_find === void 0 ? void 0 : _categories_find.title) !== null && _categories_find_title !== void 0 ? _categories_find_title : "Select Category" : "Filter by Category",
@@ -826,21 +830,22 @@ function CategorySelectorComponent(param) {
                             className: "ml-2 h-4 w-4 shrink-0 opacity-50"
                         }, void 0, false, {
                             fileName: "[project]/components/ui/category-selector.tsx",
-                            lineNumber: 46,
+                            lineNumber: 54,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/ui/category-selector.tsx",
-                    lineNumber: 36,
+                    lineNumber: 42,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/ui/category-selector.tsx",
-                lineNumber: 35,
+                lineNumber: 41,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$popover$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["PopoverContent"], {
+                id: "category-popover",
                 className: "w-full sm:max-w-xs p-0",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$command$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Command"], {
                     children: [
@@ -862,7 +867,7 @@ function CategorySelectorComponent(param) {
                             }
                         }, void 0, false, {
                             fileName: "[project]/components/ui/category-selector.tsx",
-                            lineNumber: 51,
+                            lineNumber: 59,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$command$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CommandList"], {
@@ -871,7 +876,7 @@ function CategorySelectorComponent(param) {
                                     children: "No category found."
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/category-selector.tsx",
-                                    lineNumber: 69,
+                                    lineNumber: 77,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$command$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CommandGroup"], {
@@ -889,45 +894,45 @@ function CategorySelectorComponent(param) {
                                                     className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$utils$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cn"])("ml-auto h-4 w-4", value === category._id ? "opacity-100" : "opacity-0")
                                                 }, void 0, false, {
                                                     fileName: "[project]/components/ui/category-selector.tsx",
-                                                    lineNumber: 82,
+                                                    lineNumber: 90,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, category._id, true, {
                                             fileName: "[project]/components/ui/category-selector.tsx",
-                                            lineNumber: 72,
+                                            lineNumber: 80,
                                             columnNumber: 17
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/components/ui/category-selector.tsx",
-                                    lineNumber: 70,
+                                    lineNumber: 78,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/ui/category-selector.tsx",
-                            lineNumber: 68,
+                            lineNumber: 76,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/ui/category-selector.tsx",
-                    lineNumber: 50,
+                    lineNumber: 58,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/ui/category-selector.tsx",
-                lineNumber: 49,
+                lineNumber: 57,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/ui/category-selector.tsx",
-        lineNumber: 34,
+        lineNumber: 40,
         columnNumber: 5
     }, this);
 }
-_s(CategorySelectorComponent, "WGMvOt4Cejt0gtzSAkWF5ltYtE4=", false, function() {
+_s(CategorySelectorComponent, "AVz+hQAn2naEUGp+9HNp5OOY3oI=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];
