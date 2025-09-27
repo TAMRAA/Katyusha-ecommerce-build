@@ -130,7 +130,7 @@ function ProductThumb(param) {
                 className: "p-4",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                        className: "text-lg font-semibold text-gray-800 truncate",
+                        className: "text-lg font-bold text-gray-800 truncate",
                         children: product.name
                     }, void 0, false, {
                         fileName: "[project]/components/ProductThumb.tsx",
@@ -989,10 +989,8 @@ const slides = [
 function HeroSlider() {
     _s();
     const [currentSlide, setCurrentSlide] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
-    const [isAutoPlaying, setIsAutoPlaying] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "HeroSlider.useEffect": ()=>{
-            if (!isAutoPlaying) return;
             const interval = setInterval({
                 "HeroSlider.useEffect.interval": ()=>{
                     setCurrentSlide({
@@ -1004,173 +1002,244 @@ function HeroSlider() {
                 "HeroSlider.useEffect": ()=>clearInterval(interval)
             })["HeroSlider.useEffect"];
         }
-    }["HeroSlider.useEffect"], [
-        isAutoPlaying
-    ]);
-    const nextSlide = ()=>{
-        setCurrentSlide((prev)=>(prev + 1) % slides.length);
-        setIsAutoPlaying(false);
-    };
-    const prevSlide = ()=>{
-        setCurrentSlide((prev)=>(prev - 1 + slides.length) % slides.length);
-        setIsAutoPlaying(false);
-    };
-    const goToSlide = (index)=>{
-        setCurrentSlide(index);
-        setIsAutoPlaying(false);
-    };
+    }["HeroSlider.useEffect"], []);
+    const nextSlide = ()=>setCurrentSlide((prev)=>(prev + 1) % slides.length);
+    const prevSlide = ()=>setCurrentSlide((prev)=>(prev - 1 + slides.length) % slides.length);
+    const goToSlide = (index)=>setCurrentSlide(index);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "relative h-[70vh] w-full overflow-hidden mt-6 rounded-3xl",
+        className: "relative h-[75vh] w-full overflow-hidden mt-6 rounded-3xl",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0",
-                children: slides.map((slide, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 transition-opacity duration-700 ".concat(index === currentSlide ? "opacity-100" : "opacity-0"),
+                children: slides.map((slide, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                        initial: {
+                            opacity: 0,
+                            scale: 1.05
+                        },
+                        animate: index === currentSlide ? {
+                            opacity: 1,
+                            scale: 1
+                        } : {
+                            opacity: 0,
+                            scale: 1.05
+                        },
+                        transition: {
+                            duration: 1.2,
+                            ease: "easeOut"
+                        },
+                        className: "absolute inset-0",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].img, {
                                 src: slide.image,
                                 alt: slide.title,
-                                className: "w-full h-full object-cover"
+                                className: "w-full h-full object-cover",
+                                initial: {
+                                    scale: 1
+                                },
+                                animate: index === currentSlide ? {
+                                    scale: 1.1
+                                } : {
+                                    scale: 1
+                                },
+                                transition: {
+                                    duration: 6,
+                                    ease: "easeOut"
+                                }
                             }, void 0, false, {
                                 fileName: "[project]/app/(store)/hero/page.tsx",
-                                lineNumber: 73,
+                                lineNumber: 66,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70"
+                                className: "absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90"
                             }, void 0, false, {
                                 fileName: "[project]/app/(store)/hero/page.tsx",
-                                lineNumber: 78,
+                                lineNumber: 74,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, slide.id, true, {
                         fileName: "[project]/app/(store)/hero/page.tsx",
-                        lineNumber: 67,
+                        lineNumber: 55,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/(store)/hero/page.tsx",
-                lineNumber: 65,
+                lineNumber: 53,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
-                mode: "wait",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                    initial: {
-                        opacity: 0,
-                        y: 30
-                    },
-                    animate: {
-                        opacity: 1,
-                        y: 0
-                    },
-                    exit: {
-                        opacity: 0,
-                        y: -30
-                    },
-                    transition: {
-                        duration: 0.8
-                    },
-                    className: "absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "font-serif text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg",
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "absolute inset-x-0 bottom-12 flex flex-col items-center text-center text-white px-6 space-y-4",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                        mode: "wait",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].h1, {
+                            initial: {
+                                opacity: 0,
+                                x: -100
+                            },
+                            animate: {
+                                opacity: 1,
+                                x: 0
+                            },
+                            exit: {
+                                opacity: 0,
+                                x: -100
+                            },
+                            transition: {
+                                duration: 0.8,
+                                ease: "easeOut"
+                            },
+                            className: "font-black text-5xl md:text-7xl uppercase drop-shadow-[0_8px_25px_rgba(0,0,0,1)]",
                             children: slides[currentSlide].title
-                        }, void 0, false, {
+                        }, slides[currentSlide].id + "-title", false, {
                             fileName: "[project]/app/(store)/hero/page.tsx",
-                            lineNumber: 93,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-lg md:text-2xl mb-8 max-w-2xl drop-shadow-md",
-                            children: slides[currentSlide].subtitle
-                        }, void 0, false, {
-                            fileName: "[project]/app/(store)/hero/page.tsx",
-                            lineNumber: 96,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                            size: "lg",
-                            className: "bg-white text-black hover:bg-gray-100 font-semibold px-10 py-4 rounded-2xl shadow-lg",
-                            asChild: true,
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: slides[currentSlide].buttonLink,
-                                children: slides[currentSlide].buttonText
-                            }, void 0, false, {
-                                fileName: "[project]/app/(store)/hero/page.tsx",
-                                lineNumber: 104,
-                                columnNumber: 13
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/app/(store)/hero/page.tsx",
-                            lineNumber: 99,
+                            lineNumber: 82,
                             columnNumber: 11
                         }, this)
-                    ]
-                }, slides[currentSlide].id, true, {
-                    fileName: "[project]/app/(store)/hero/page.tsx",
-                    lineNumber: 85,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+                    }, void 0, false, {
+                        fileName: "[project]/app/(store)/hero/page.tsx",
+                        lineNumber: 81,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                        mode: "wait",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].p, {
+                            initial: {
+                                opacity: 0,
+                                x: 100
+                            },
+                            animate: {
+                                opacity: 1,
+                                x: 0
+                            },
+                            exit: {
+                                opacity: 0,
+                                x: 100
+                            },
+                            transition: {
+                                duration: 0.8,
+                                ease: "easeOut",
+                                delay: 0.1
+                            },
+                            className: "font-extrabold text-md md:text-2xl drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]",
+                            children: slides[currentSlide].subtitle
+                        }, slides[currentSlide].id + "-subtitle", false, {
+                            fileName: "[project]/app/(store)/hero/page.tsx",
+                            lineNumber: 95,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/app/(store)/hero/page.tsx",
+                        lineNumber: 94,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+                        mode: "wait",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                            initial: {
+                                opacity: 0,
+                                y: 50
+                            },
+                            animate: {
+                                opacity: 1,
+                                y: 0
+                            },
+                            exit: {
+                                opacity: 0,
+                                y: 50
+                            },
+                            transition: {
+                                duration: 0.8,
+                                ease: "easeOut",
+                                delay: 0.2
+                            },
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                size: "lg",
+                                className: "bg-white text-black font-black px-12 py-5 rounded-lg shadow-lg hover:bg-orange-600 hover:text-white hover:scale-105 transition-transform uppercase",
+                                asChild: true,
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    href: slides[currentSlide].buttonLink,
+                                    children: slides[currentSlide].buttonText
+                                }, void 0, false, {
+                                    fileName: "[project]/app/(store)/hero/page.tsx",
+                                    lineNumber: 120,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/app/(store)/hero/page.tsx",
+                                lineNumber: 115,
+                                columnNumber: 13
+                            }, this)
+                        }, slides[currentSlide].id + "-button", false, {
+                            fileName: "[project]/app/(store)/hero/page.tsx",
+                            lineNumber: 108,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/app/(store)/hero/page.tsx",
+                        lineNumber: 107,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/app/(store)/hero/page.tsx",
-                lineNumber: 84,
+                lineNumber: 80,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: prevSlide,
-                className: "absolute left-3 md:left-8 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-transparent backdrop-blur-sm hover:bg-white/30 transition-colors",
+                className: "absolute left-3 md:left-8 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-black/60 backdrop-blur-sm hover:bg-black/80 transition-colors shadow-lg",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
                     className: "h-6 w-6 md:h-8 md:w-8 text-white"
                 }, void 0, false, {
                     fileName: "[project]/app/(store)/hero/page.tsx",
-                    lineNumber: 118,
+                    lineNumber: 133,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/(store)/hero/page.tsx",
-                lineNumber: 112,
+                lineNumber: 129,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: nextSlide,
-                className: "absolute right-3 md:right-8 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-transparent backdrop-blur-sm hover:bg-white/30 transition-colors",
+                className: "absolute right-3 md:right-8 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-black/60 backdrop-blur-sm hover:bg-black/80 transition-colors shadow-lg",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                     className: "h-6 w-6 md:h-8 md:w-8 text-white"
                 }, void 0, false, {
                     fileName: "[project]/app/(store)/hero/page.tsx",
-                    lineNumber: 126,
+                    lineNumber: 139,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/(store)/hero/page.tsx",
-                lineNumber: 120,
+                lineNumber: 135,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-3",
                 children: slides.map((_, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                         onClick: ()=>goToSlide(index),
-                        className: "w-3 h-3 rounded-full transition-all ".concat(index === currentSlide ? "bg-white scale-110" : "bg-white/50 hover:bg-white/70")
+                        className: "w-2 h-2 rounded-full border-2 border-white transition-all ".concat(index === currentSlide ? "bg-orange-500 scale-125 shadow-[0_0_10px_rgba(0,0,0,1)]" : "bg-transparent hover:bg-white/30")
                     }, index, false, {
                         fileName: "[project]/app/(store)/hero/page.tsx",
-                        lineNumber: 132,
+                        lineNumber: 145,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/app/(store)/hero/page.tsx",
-                lineNumber: 130,
+                lineNumber: 143,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/(store)/hero/page.tsx",
-        lineNumber: 63,
+        lineNumber: 51,
         columnNumber: 5
     }, this);
 }
-_s(HeroSlider, "PtCNM8x3M2I79WgcX9RbWQEKsNk=");
+_s(HeroSlider, "/jm+XmndjAYlDCFyCnfFEXJOloU=");
 _c = HeroSlider;
 var _c;
 __turbopack_context__.k.register(_c, "HeroSlider");

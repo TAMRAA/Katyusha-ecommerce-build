@@ -1,6 +1,6 @@
 import "../globals.css";
 import type { Metadata } from "next";
-import Header from "@/components/Header";
+import Header from "@/components/Navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 import { SanityLive } from "@/sanity/lib/live";
 
@@ -16,7 +16,7 @@ export default async function RootLayout({
     <ClerkProvider dynamic>
       <html lang="en">
         <body className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans text-gray-900">
-          <main className="container mx-auto p-6 max-w-6xl">
+          <main className="container mx-auto p-6 max-w-6xl bg-yellow-50">
             <Header />
             {children}
           </main>

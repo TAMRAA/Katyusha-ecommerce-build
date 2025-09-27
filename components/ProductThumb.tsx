@@ -35,7 +35,7 @@ function ProductThumb({ product }: { product: Product }) {
 
       {/* Rendering data */}
       <div className="p-4">
-        <h2 className="text-lg font-semibold text-gray-800 truncate">
+        <h2 className="text-lg font-bold text-gray-800 truncate">
           {product.name}
         </h2>
         <p className="mt-2 text-sm text-gray-900 line-clamp-2">

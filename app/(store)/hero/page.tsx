@@ -34,112 +34,127 @@ const slides = [
 
 export function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
-    if (!isAutoPlaying) return;
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 6000);
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-    setIsAutoPlaying(false);
-  };
-
-  const prevSlide = () => {
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () =>
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-    setIsAutoPlaying(false);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-    setIsAutoPlaying(false);
-  };
+  const goToSlide = (index: number) => setCurrentSlide(index);
 
   return (
-    <section className="relative h-[70vh] w-full overflow-hidden mt-6 rounded-3xl">
+    <section className="relative h-[75vh] w-full overflow-hidden mt-6 rounded-3xl">
       {/* Slides */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
-          <div
+          <motion.div
             key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-700 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={
+              index === currentSlide
+                ? { opacity: 1, scale: 1 }
+                : { opacity: 0, scale: 1.05 }
+            }
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="absolute inset-0"
           >
-            <img
+            <motion.img
               src={slide.image}
               alt={slide.title}
               className="w-full h-full object-cover"
+              initial={{ scale: 1 }}
+              animate={index === currentSlide ? { scale: 1.1 } : { scale: 1 }}
+              transition={{ duration: 6, ease: "easeOut" }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/70" />
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90" />
+          </motion.div>
         ))}
       </div>
 
-      {/* Content */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={slides[currentSlide].id}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -30 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-6"
-        >
-          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
-            {slides[currentSlide].title}
-          </h1>
-          <p className="text-lg md:text-2xl mb-8 max-w-2xl drop-shadow-md">
-            {slides[currentSlide].subtitle}
-          </p>
-          <Button
-            size="lg"
-            className="bg-white text-black hover:bg-gray-100 font-semibold px-10 py-4 rounded-2xl shadow-lg"
-            asChild
+      {/* Content at bottom */}
+      <div className="absolute inset-x-0 bottom-12 flex flex-col items-center text-center text-white px-6 space-y-4">
+        <AnimatePresence mode="wait">
+          <motion.h1
+            key={slides[currentSlide].id + "-title"}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="font-black text-5xl md:text-7xl uppercase drop-shadow-[0_8px_25px_rgba(0,0,0,1)]"
           >
-            <a href={slides[currentSlide].buttonLink}>
-              {slides[currentSlide].buttonText}
-            </a>
-          </Button>
-        </motion.div>
-      </AnimatePresence>
+            {slides[currentSlide].title}
+          </motion.h1>
+        </AnimatePresence>
+
+        <AnimatePresence mode="wait">
+          <motion.p
+            key={slides[currentSlide].id + "-subtitle"}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            className="font-extrabold text-md md:text-2xl drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]"
+          >
+            {slides[currentSlide].subtitle}
+          </motion.p>
+        </AnimatePresence>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={slides[currentSlide].id + "-button"}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          >
+            <Button
+              size="lg"
+              className="bg-white text-black font-black px-12 py-5 rounded-lg shadow-lg hover:bg-orange-600 hover:text-white hover:scale-105 transition-transform uppercase"
+              asChild
+            >
+              <a href={slides[currentSlide].buttonLink}>
+                {slides[currentSlide].buttonText}
+              </a>
+            </Button>
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 z-20
-             p-3 md:p-4 rounded-full bg-transparent backdrop-blur-sm
-             hover:bg-white/30 transition-colors"
+        className="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-black/60 backdrop-blur-sm hover:bg-black/80 transition-colors shadow-lg"
       >
         <ChevronLeft className="h-6 w-6 md:h-8 md:w-8 text-white" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 z-20
-             p-3 md:p-4 rounded-full bg-transparent backdrop-blur-sm
-             hover:bg-white/30 transition-colors"
+        className="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 z-20 p-3 md:p-4 rounded-full bg-black/60 backdrop-blur-sm hover:bg-black/80 transition-colors shadow-lg"
       >
         <ChevronRight className="h-6 w-6 md:h-8 md:w-8 text-white" />
       </button>
 
-      {/* Indicators */}
+
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
+            className={`w-2 h-2 rounded-full border-2 border-white transition-all ${
               index === currentSlide
-                ? "bg-white scale-110"
-                : "bg-white/50 hover:bg-white/70"
+                ? "bg-orange-500 scale-125 shadow-[0_0_10px_rgba(0,0,0,1)]"
+                : "bg-transparent hover:bg-white/30"
             }`}
           />
         ))}
       </div>
+
+
     </section>
   );
 }
