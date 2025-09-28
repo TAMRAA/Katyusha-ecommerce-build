@@ -103,7 +103,7 @@ function AddToBasketButton({
     <button
       onClick={handleAdd}
       disabled={disabled}
-      className={`relative overflow-hidden py-4 px-8 text-lg font-semibold rounded-2xl bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none ${className}`}
+      className={`relative overflow-hidden py-4 px-8 text-lg font-semibold rounded-2xl bg-gradient-to-r from-orange-400 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none ${className}`}
       aria-label={`Add ${product.name || "item"} to basket`}
     >
       {/* Animated sparkle effect */}

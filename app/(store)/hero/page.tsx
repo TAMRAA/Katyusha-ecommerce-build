@@ -78,19 +78,8 @@ export function HeroSlider() {
 
       {/* Content at bottom */}
       <div className="absolute inset-x-0 bottom-12 flex flex-col items-center text-center text-white px-6 space-y-4">
-        <AnimatePresence mode="wait">
-          <motion.h1
-            key={slides[currentSlide].id + "-title"}
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-black text-5xl md:text-7xl uppercase drop-shadow-[0_8px_25px_rgba(0,0,0,1)]"
-          >
-            {slides[currentSlide].title}
-          </motion.h1>
-        </AnimatePresence>
 
+        {/* Small Title */}
         <AnimatePresence mode="wait">
           <motion.p
             key={slides[currentSlide].id + "-subtitle"}
@@ -104,6 +93,21 @@ export function HeroSlider() {
           </motion.p>
         </AnimatePresence>
 
+        {/* Big Title */}
+        <AnimatePresence mode="wait">
+          <motion.h1
+            key={slides[currentSlide].id + "-title"}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="font-black text-5xl md:text-7xl uppercase drop-shadow-[0_8px_25px_rgba(0,0,0,1)]"
+          >
+            {slides[currentSlide].title}
+          </motion.h1>
+        </AnimatePresence>
+
+        {/* Buttons */}
         <AnimatePresence mode="wait">
           <motion.div
             key={slides[currentSlide].id + "-button"}
@@ -113,7 +117,7 @@ export function HeroSlider() {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <Button
-              size="lg"
+              size="icon"
               className="bg-white text-black font-black px-12 py-5 rounded-lg shadow-lg hover:bg-orange-600 hover:text-white hover:scale-105 transition-transform uppercase"
               asChild
             >
@@ -139,7 +143,6 @@ export function HeroSlider() {
         <ChevronRight className="h-6 w-6 md:h-8 md:w-8 text-white" />
       </button>
 
-
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-3">
         {slides.map((_, index) => (
           <button
@@ -153,8 +156,6 @@ export function HeroSlider() {
           />
         ))}
       </div>
-
-
     </section>
   );
 }
