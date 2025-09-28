@@ -87,7 +87,7 @@ export function HeroSlider() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 100 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="font-extrabold text-md md:text-2xl drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]"
+            className="font-extrabold text-md md:text-md drop-shadow-[0_6px_20px_rgba(0,0,0,0.95)]"
           >
             {slides[currentSlide].subtitle}
           </motion.p>
@@ -101,7 +101,7 @@ export function HeroSlider() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -100 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-black text-5xl md:text-7xl uppercase drop-shadow-[0_8px_25px_rgba(0,0,0,1)]"
+            className="font-black text-3xl md:text-5xl uppercase drop-shadow-[0_8px_25px_rgba(0,0,0,1)]"
           >
             {slides[currentSlide].title}
           </motion.h1>
