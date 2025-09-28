@@ -260,7 +260,7 @@ function ProductGrid(param) {
                 columnNumber: 7
             }, this),
             products.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "text-center py-12",
+                className: "text-center py-12 ",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "text-gray-500 text-lg",
                     children: "No products found"
@@ -1037,24 +1037,22 @@ const ProductsView = (param)=>{
                     className: "mb-8 text-center",
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                            className: "text-4xl font-bold text-gray-900 mb-3",
-                            children: "Our Products"
-                        }, void 0, false, {
+                            className: "text-md font-semibold text-gray-900 mb-3",
+                            children: [
+                                products.length,
+                                " product",
+                                products.length !== 1 ? "s" : ""
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/components/ProductsView.tsx",
                             lineNumber: 36,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                            className: "text-gray-600 text-lg",
-                            children: [
-                                "Discover ",
-                                products.length,
-                                " amazing product",
-                                products.length !== 1 ? "s" : ""
-                            ]
-                        }, void 0, true, {
+                            className: "text-gray-600 text-lg"
+                        }, void 0, false, {
                             fileName: "[project]/components/ProductsView.tsx",
-                            lineNumber: 39,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -1087,25 +1085,25 @@ const ProductsView = (param)=>{
                                         children: "Categories"
                                     }, void 0, false, {
                                         fileName: "[project]/components/ProductsView.tsx",
-                                        lineNumber: 54,
+                                        lineNumber: 52,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ui$2f$category$2d$selector$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["CategorySelectorComponent"], {
                                         categories: categories
                                     }, void 0, false, {
                                         fileName: "[project]/components/ProductsView.tsx",
-                                        lineNumber: 57,
+                                        lineNumber: 55,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/components/ProductsView.tsx",
-                                lineNumber: 53,
+                                lineNumber: 51,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/components/ProductsView.tsx",
-                            lineNumber: 47,
+                            lineNumber: 45,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1125,18 +1123,18 @@ const ProductsView = (param)=>{
                                 products: products
                             }, void 0, false, {
                                 fileName: "[project]/components/ProductsView.tsx",
-                                lineNumber: 68,
+                                lineNumber: 66,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/components/ProductsView.tsx",
-                            lineNumber: 62,
+                            lineNumber: 60,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/ProductsView.tsx",
-                    lineNumber: 45,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]

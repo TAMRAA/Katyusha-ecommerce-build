@@ -33,7 +33,7 @@ function ProductGrid({ products }: { products: Product[] }) {
       </div>
 
       {products.length === 0 && (
-        <div className="text-center py-12">
+        <div className="text-center py-12 ">
           <p className="text-gray-500 text-lg">No products found</p>
         </div>
       )}

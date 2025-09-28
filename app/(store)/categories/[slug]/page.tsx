@@ -8,8 +8,8 @@ async function CategoryPage(
   const products = await getProductsByCategory(slug);
   const categories = await getAllCategories();
   return (
-    <div className="flex flex-col items-center justify-start min-h-screen bg-gray-100 p-4">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-4xl">
+    <div className="flex flex-col items-center justify-start min-h-screen bg-yellow-100 p-4 rounded-2xl">
+      <div className="bg-yellow-50 p-8 rounded-lg shadow-md w-full max-w-4xl">
         <h1 className="text-3xl font-bold mb-6 text-center">
           {slug
             .split("-")

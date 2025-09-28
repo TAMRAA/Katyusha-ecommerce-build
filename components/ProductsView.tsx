@@ -33,13 +33,11 @@ const ProductsView = ({ products, categories }: ProductsViewProps) => {
           animate={{ opacity: 1, y: 0 }}
           className="mb-8 text-center"
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">
-            Our Products
-          </h1>
-          <p className="text-gray-600 text-lg">
-            Discover {products.length} amazing product
+          <h1 className="text-md font-semibold text-gray-900 mb-3">
+            {products.length} product
             {products.length !== 1 ? "s" : ""}
-          </p>
+          </h1>
+          <p className="text-gray-600 text-lg"></p>
         </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-8">
