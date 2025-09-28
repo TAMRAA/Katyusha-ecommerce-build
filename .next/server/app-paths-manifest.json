@@ -5,6 +5,7 @@
   "/(store)/page": "app/(store)/page.js",
   "/(store)/product/[slug]/page": "app/(store)/product/[slug]/page.js",
   "/(store)/search/page": "app/(store)/search/page.js",
+  "/(store)/success/page": "app/(store)/success/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/studio/[[...tool]]/page": "app/studio/[[...tool]]/page.js"
