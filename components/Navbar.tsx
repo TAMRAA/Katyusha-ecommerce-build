@@ -58,8 +58,8 @@ export default function Header() {
     { name: "Accessori", href: "/categories/Accessori" },
     { name: "Marchi", href: "/categories/Marchi" },
     { name: "PROMO", href: "/categories/Promo" },
-    { name: "Gift Card", href: "/Gift-card" },
-    { name: "Store & Family", href: "/Store-family" },
+    // { name: "Gift Card", href: "/Gift-card" },
+    // { name: "Store & Family", href: "/Store-family" },
   ];
 
   const isActive = (href: string) =>

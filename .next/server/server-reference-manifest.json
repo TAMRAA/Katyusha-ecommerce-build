@@ -8,6 +8,12 @@
           "exportedName": "collectKeylessMetadata",
           "filename": "node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js"
         },
+        "app/(store)/categories/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(store)/categories/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "collectKeylessMetadata",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js"
+        },
         "app/(store)/page": {
           "moduleId": "[project]/.next-internal/server/app/(store)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -23,6 +29,7 @@
       },
       "layer": {
         "app/(store)/basket/page": "rsc",
+        "app/(store)/categories/[slug]/page": "rsc",
         "app/(store)/page": "rsc",
         "app/(store)/product/[slug]/page": "rsc"
       },
@@ -37,6 +44,12 @@
           "exportedName": "formatMetadataHeaders",
           "filename": "node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js"
         },
+        "app/(store)/categories/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(store)/categories/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "formatMetadataHeaders",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js"
+        },
         "app/(store)/page": {
           "moduleId": "[project]/.next-internal/server/app/(store)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -52,6 +65,7 @@
       },
       "layer": {
         "app/(store)/basket/page": "rsc",
+        "app/(store)/categories/[slug]/page": "rsc",
         "app/(store)/page": "rsc",
         "app/(store)/product/[slug]/page": "rsc"
       },
@@ -66,6 +80,12 @@
           "exportedName": "deleteKeylessAction",
           "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
         },
+        "app/(store)/categories/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(store)/categories/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "deleteKeylessAction",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        },
         "app/(store)/page": {
           "moduleId": "[project]/.next-internal/server/app/(store)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -81,6 +101,7 @@
       },
       "layer": {
         "app/(store)/basket/page": "action-browser",
+        "app/(store)/categories/[slug]/page": "action-browser",
         "app/(store)/page": "action-browser",
         "app/(store)/product/[slug]/page": "action-browser"
       },
@@ -95,6 +116,12 @@
           "exportedName": "syncKeylessConfigAction",
           "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
         },
+        "app/(store)/categories/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(store)/categories/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "syncKeylessConfigAction",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        },
         "app/(store)/page": {
           "moduleId": "[project]/.next-internal/server/app/(store)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -110,6 +137,7 @@
       },
       "layer": {
         "app/(store)/basket/page": "action-browser",
+        "app/(store)/categories/[slug]/page": "action-browser",
         "app/(store)/page": "action-browser",
         "app/(store)/product/[slug]/page": "action-browser"
       },
@@ -124,6 +152,12 @@
           "exportedName": "detectKeylessEnvDriftAction",
           "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
         },
+        "app/(store)/categories/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(store)/categories/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "detectKeylessEnvDriftAction",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        },
         "app/(store)/page": {
           "moduleId": "[project]/.next-internal/server/app/(store)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -139,6 +173,7 @@
       },
       "layer": {
         "app/(store)/basket/page": "action-browser",
+        "app/(store)/categories/[slug]/page": "action-browser",
         "app/(store)/page": "action-browser",
         "app/(store)/product/[slug]/page": "action-browser"
       },
@@ -153,6 +188,12 @@
           "exportedName": "createOrReadKeylessAction",
           "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
         },
+        "app/(store)/categories/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(store)/categories/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "createOrReadKeylessAction",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        },
         "app/(store)/page": {
           "moduleId": "[project]/.next-internal/server/app/(store)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -168,6 +209,7 @@
       },
       "layer": {
         "app/(store)/basket/page": "action-browser",
+        "app/(store)/categories/[slug]/page": "action-browser",
         "app/(store)/page": "action-browser",
         "app/(store)/product/[slug]/page": "action-browser"
       },
@@ -182,6 +224,12 @@
           "exportedName": "invalidateCacheAction",
           "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
         },
+        "app/(store)/categories/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(store)/categories/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "invalidateCacheAction",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+        },
         "app/(store)/page": {
           "moduleId": "[project]/.next-internal/server/app/(store)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -197,6 +245,7 @@
       },
       "layer": {
         "app/(store)/basket/page": "action-browser",
+        "app/(store)/categories/[slug]/page": "action-browser",
         "app/(store)/page": "action-browser",
         "app/(store)/product/[slug]/page": "action-browser"
       },
@@ -211,6 +260,12 @@
           "exportedName": "revalidateSyncTags",
           "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
         },
+        "app/(store)/categories/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(store)/categories/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "revalidateSyncTags",
+          "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
+        },
         "app/(store)/page": {
           "moduleId": "[project]/.next-internal/server/app/(store)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -226,6 +281,7 @@
       },
       "layer": {
         "app/(store)/basket/page": "action-browser",
+        "app/(store)/categories/[slug]/page": "action-browser",
         "app/(store)/page": "action-browser",
         "app/(store)/product/[slug]/page": "action-browser"
       },
@@ -240,6 +296,12 @@
           "exportedName": "setPerspectiveCookie",
           "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
         },
+        "app/(store)/categories/[slug]/page": {
+          "moduleId": "[project]/.next-internal/server/app/(store)/categories/[slug]/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "setPerspectiveCookie",
+          "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
+        },
         "app/(store)/page": {
           "moduleId": "[project]/.next-internal/server/app/(store)/page/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE2 => \"[project]/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js [app-rsc] (ecmascript)\", ACTIONS_MODULE3 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
           "async": false,
@@ -255,6 +317,7 @@
       },
       "layer": {
         "app/(store)/basket/page": "action-browser",
+        "app/(store)/categories/[slug]/page": "action-browser",
         "app/(store)/page": "action-browser",
         "app/(store)/product/[slug]/page": "action-browser"
       },

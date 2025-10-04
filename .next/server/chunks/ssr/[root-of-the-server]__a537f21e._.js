@@ -448,14 +448,6 @@ function Header() {
         {
             name: "PROMO",
             href: "/categories/Promo"
-        },
-        {
-            name: "Gift Card",
-            href: "/Gift-card"
-        },
-        {
-            name: "Store & Family",
-            href: "/Store-family"
         }
     ];
     const isActive = (href)=>href === pathname || href !== "/" && pathname.startsWith(href);

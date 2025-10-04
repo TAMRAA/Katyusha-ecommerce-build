@@ -1,7 +1,9 @@
 {
   "/(store)/basket/page": "app/(store)/basket/page.js",
+  "/(store)/categories/[slug]/page": "app/(store)/categories/[slug]/page.js",
   "/(store)/page": "app/(store)/page.js",
   "/(store)/product/[slug]/page": "app/(store)/product/[slug]/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/api/sale/black-friday/route": "app/api/sale/black-friday/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }
