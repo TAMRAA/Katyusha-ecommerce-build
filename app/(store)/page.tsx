@@ -25,8 +25,8 @@ export default async function Home() {
       <div className="flex flex-col items-center justify-top min-h-screen bg-bg-yellow-50 p-4">
         <ProductsView products={products} categories={categories} />
       </div>
-      <BlackFridayBanner />
       <PhotoCollage />
+      <BlackFridayBanner />
       <Footer />
     </div>
   );

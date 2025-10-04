@@ -44,52 +44,22 @@ export default function Header() {
     state.items.reduce((total, item) => total + item.quantity, 0)
   );
 
+  // Unified color scheme for all navigation items
+  const unifiedGradient = "from-orange-500 to-red-500";
+  const unifiedHoverGradient = "from-orange-600 to-red-600";
+  const activeTextColor = "text-white";
+  const inactiveTextColor = "text-gray-600 hover:text-gray-900";
+
   const navigation = [
-    {
-      name: "Shoes",
-      href: "/categories/shoes",
-      gradient: "from-blue-500 to-purple-600",
-    },
-    {
-      name: "Jeans",
-      href: "/categories/jeans",
-      gradient: "from-indigo-500 to-blue-600",
-    },
-    {
-      name: "Skateboard",
-      href: "/categories/skateboard",
-      gradient: "from-green-500 to-teal-600",
-    },
-    {
-      name: "Snowboard",
-      href: "/categories/Snowboard",
-      gradient: "from-cyan-500 to-blue-600",
-    },
-    {
-      name: "Accessori",
-      href: "/categories/Accessori",
-      gradient: "from-yellow-500 to-orange-600",
-    },
-    {
-      name: "Marchi",
-      href: "/categories/Marchi",
-      gradient: "from-pink-500 to-rose-600",
-    },
-    {
-      name: "PROMO",
-      href: "/categories/Promo",
-      gradient: "from-red-500 via-orange-500 to-yellow-500",
-    },
-    {
-      name: "Gift Card",
-      href: "/Gift-card",
-      gradient: "from-purple-500 to-pink-600",
-    },
-    {
-      name: "Store & Family",
-      href: "/Store-family",
-      gradient: "from-gray-600 to-gray-800",
-    },
+    { name: "Shoes", href: "/categories/shoes" },
+    { name: "Jeans", href: "/categories/jeans" },
+    { name: "Skateboard", href: "/categories/skateboard" },
+    { name: "Snowboard", href: "/categories/Snowboard" },
+    { name: "Accessori", href: "/categories/Accessori" },
+    { name: "Marchi", href: "/categories/Marchi" },
+    { name: "PROMO", href: "/categories/Promo" },
+    { name: "Gift Card", href: "/Gift-card" },
+    { name: "Store & Family", href: "/Store-family" },
   ];
 
   const isActive = (href: string) =>
@@ -342,11 +312,9 @@ export default function Header() {
                                   href={item.href}
                                   onClick={() => setIsOpen(false)}
                                   className={`block py-2 px-4 rounded-lg transition-all duration-300 font-medium ${
-                                    item.name === "PROMO"
-                                      ? "bg-gradient-to-r from-red-500 to-orange-500 text-white shadow-lg"
-                                      : isActive(item.href)
-                                        ? `bg-gradient-to-r ${item.gradient} text-white shadow-md`
-                                        : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                                    isActive(item.href)
+                                      ? `bg-gradient-to-r ${unifiedGradient} text-white shadow-md`
+                                      : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                   }`}
                                 >
                                   {item.name}
@@ -496,11 +464,9 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={`relative text-sm font-semibold pb-1 transition-all duration-300 ${
-                    item.name === "PROMO"
-                      ? "bg-gradient-to-r from-red-600 via-orange-500 to-yellow-400 bg-clip-text text-transparent"
-                      : isActive(item.href)
-                        ? `bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent`
-                        : "text-gray-600 hover:text-gray-900"
+                    isActive(item.href)
+                      ? `bg-gradient-to-r ${unifiedGradient} bg-clip-text text-transparent`
+                      : inactiveTextColor
                   }`}
                 >
                   {item.name}
@@ -511,11 +477,7 @@ export default function Header() {
                     initial={{ width: 0 }}
                     animate={{ width: "100%" }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className={`absolute bottom-0 left-0 h-1 rounded-full bg-gradient-to-r ${
-                      item.name === "PROMO"
-                        ? "from-red-500 via-orange-400 to-yellow-400"
-                        : item.gradient
-                    }`}
+                    className={`absolute bottom-0 left-0 h-1 rounded-full bg-gradient-to-r ${unifiedGradient}`}
                   />
                 )}
               </motion.div>

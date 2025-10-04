@@ -2,6 +2,7 @@
 "[project]/components/BlackFridayBanner.tsx [app-client] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
+// components/BlackFridayBanner.tsx
 __turbopack_context__.s([
     "default",
     ()=>BlackFridayBanner
@@ -18,129 +19,171 @@ var _s = __turbopack_context__.k.signature();
 function BlackFridayBanner() {
     _s();
     const [sale, setSale] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [isLoading, setIsLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
+    const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "BlackFridayBanner.useEffect": ()=>{
             async function fetchSale() {
                 try {
+                    setIsLoading(true);
+                    setError(null);
                     const res = await fetch("/api/sale/black-friday");
-                    if (!res.ok) return; // handle 404 or server errors
+                    // console.log("🔵 API Response status:", res.status);
+                    if (!res.ok) {
+                        console.log("🔴 API Error - Status not OK:", res.status);
+                        setError("API returned ".concat(res.status, " ").concat(res.statusText));
+                        return;
+                    }
                     const data = await res.json();
-                    if (data.isActive) setSale(data);
+                    // console.log("🟢 Received sale data:", data);
+                    // Check if sale is active
+                    if (data.isActive) {
+                        console.log("✅ Sale is active, displaying banner");
+                        setSale(data);
+                    } else {
+                        console.log("❌ Sale data exists but is not active");
+                        setError("Sale exists but is not active");
+                    }
                 } catch (err) {
-                    console.error(err);
+                    console.error("💥 Error fetching sale:", err);
+                    setError(err instanceof Error ? err.message : "Unknown error occurred");
+                } finally{
+                    setIsLoading(false);
+                    console.log("⚪ Finished loading, isLoading set to false");
                 }
             }
             fetchSale();
         }
     }["BlackFridayBanner.useEffect"], []);
-    if (!sale) return null;
+    // Debug render states
+    console.log("🎨 Render state - isLoading:", isLoading, "sale:", sale, "error:", error);
+    if (isLoading) {
+        console.log("⏳ Still loading, not rendering");
+        return null;
+    }
+    if (error) {
+        console.log("🚫 Error occurred:", error);
+        return null;
+    }
+    if (!sale) {
+        console.log("📭 No sale data available");
+        return null;
+    }
+    console.log("🎉 Rendering banner with sale:", sale);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-            initial: {
-                opacity: 0,
-                y: -20
-            },
-            animate: {
-                opacity: 1,
-                y: 0
-            },
-            exit: {
-                opacity: 0,
-                y: -20
-            },
-            className: "bg-gradient-to-r from-black to-gray-900 text-white px-6 py-6 mx-4 mt-3 rounded-2xl shadow-lg",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex flex-col sm:flex-row items-start sm:items-center justify-between",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex-1 mb-4 sm:mb-0",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl sm:text-5xl font-extrabold mb-2",
-                                children: sale.title
-                            }, void 0, false, {
-                                fileName: "[project]/components/BlackFridayBanner.tsx",
-                                lineNumber: 45,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-xl sm:text-3xl font-semibold",
-                                children: sale.description
-                            }, void 0, false, {
-                                fileName: "[project]/components/BlackFridayBanner.tsx",
-                                lineNumber: 48,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/BlackFridayBanner.tsx",
-                        lineNumber: 44,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "bg-white text-black py-4 px-6 rounded-full shadow-md hover:scale-105 transform transition duration-300",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                initial: {
+                    opacity: 0,
+                    y: -20
+                },
+                animate: {
+                    opacity: 1,
+                    y: 0
+                },
+                exit: {
+                    opacity: 0,
+                    y: -20
+                },
+                className: "bg-gradient-to-r from-black to-gray-900 text-white px-6 py-6 mx-4 mt-3 rounded-2xl shadow-lg",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "flex flex-col sm:flex-row items-start sm:items-center justify-between",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex-1 mb-4 sm:mb-0",
                             children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "font-bold text-base sm:text-xl",
-                                    children: [
-                                        "Use code:",
-                                        " ",
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "text-orange-500",
-                                            children: sale.couponCode
-                                        }, void 0, false, {
-                                            fileName: "[project]/components/BlackFridayBanner.tsx",
-                                            lineNumber: 56,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                    className: "text-3xl sm:text-5xl font-extrabold mb-2",
+                                    children: sale.title
+                                }, void 0, false, {
                                     fileName: "[project]/components/BlackFridayBanner.tsx",
-                                    lineNumber: 54,
-                                    columnNumber: 15
+                                    lineNumber: 96,
+                                    columnNumber: 13
                                 }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: "ml-2 font-bold text-base sm:text-xl",
-                                    children: [
-                                        "for ",
-                                        sale.discountAmount,
-                                        "% OFF"
-                                    ]
-                                }, void 0, true, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "text-xl sm:text-3xl font-semibold",
+                                    children: sale.description
+                                }, void 0, false, {
                                     fileName: "[project]/components/BlackFridayBanner.tsx",
-                                    lineNumber: 58,
-                                    columnNumber: 15
+                                    lineNumber: 99,
+                                    columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/BlackFridayBanner.tsx",
-                            lineNumber: 53,
-                            columnNumber: 13
+                            lineNumber: 95,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "bg-white text-black py-4 px-6 rounded-full shadow-md hover:scale-105 transform transition duration-300",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "font-bold text-base sm:text-xl",
+                                        children: [
+                                            "Use code:",
+                                            " ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-orange-500",
+                                                children: sale.couponCode
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/BlackFridayBanner.tsx",
+                                                lineNumber: 107,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/BlackFridayBanner.tsx",
+                                        lineNumber: 105,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: "ml-2 font-bold text-base sm:text-xl",
+                                        children: [
+                                            "for ",
+                                            sale.discountAmount,
+                                            "% OFF"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/components/BlackFridayBanner.tsx",
+                                        lineNumber: 109,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/BlackFridayBanner.tsx",
+                                lineNumber: 104,
+                                columnNumber: 13
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/BlackFridayBanner.tsx",
+                            lineNumber: 103,
+                            columnNumber: 11
                         }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/components/BlackFridayBanner.tsx",
-                        lineNumber: 52,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/components/BlackFridayBanner.tsx",
+                    lineNumber: 94,
+                    columnNumber: 9
+                }, this)
+            }, "black-friday-banner", false, {
                 fileName: "[project]/components/BlackFridayBanner.tsx",
-                lineNumber: 43,
-                columnNumber: 9
+                lineNumber: 87,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                fileName: "[project]/components/BlackFridayBanner.tsx",
+                lineNumber: 116,
+                columnNumber: 7
             }, this)
-        }, "black-friday-banner", false, {
-            fileName: "[project]/components/BlackFridayBanner.tsx",
-            lineNumber: 36,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
+        ]
+    }, void 0, true, {
         fileName: "[project]/components/BlackFridayBanner.tsx",
-        lineNumber: 35,
+        lineNumber: 86,
         columnNumber: 5
     }, this);
 }
-_s(BlackFridayBanner, "//pnrd8OvfULajGaY6Du49hV3CY=");
+_s(BlackFridayBanner, "ImLn1N5qAAhAg5UD+/NUK1h1VlQ=");
 _c = BlackFridayBanner;
 var _c;
 __turbopack_context__.k.register(_c, "BlackFridayBanner");

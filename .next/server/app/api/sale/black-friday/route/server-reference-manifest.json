@@ -1,0 +1,35 @@
+{
+  "node": {
+    "7f5ce5c3fe9b8f2c7f06512bd697da25ccf517f617": {
+      "workers": {
+        "app/api/sale/black-friday/route": {
+          "moduleId": "[project]/.next-internal/server/app/api/sale/black-friday/route/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "revalidateSyncTags",
+          "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
+        }
+      },
+      "layer": {
+        "app/api/sale/black-friday/route": "action-browser"
+      },
+      "exportedName": "revalidateSyncTags",
+      "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
+    },
+    "7fdb9730c0dc8d5b63135028e2e413023c2657a6cf": {
+      "workers": {
+        "app/api/sale/black-friday/route": {
+          "moduleId": "[project]/.next-internal/server/app/api/sale/black-friday/route/actions.js { ACTIONS_MODULE0 => \"[project]/node_modules/@sanity/next-loader/dist/server-actions.js [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "setPerspectiveCookie",
+          "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
+        }
+      },
+      "layer": {
+        "app/api/sale/black-friday/route": "action-browser"
+      },
+      "exportedName": "setPerspectiveCookie",
+      "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
+    }
+  },
+  "edge": {}
+}

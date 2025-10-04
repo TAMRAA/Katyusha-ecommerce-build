@@ -1,3 +1,4 @@
+// components/BlackFridayBanner.tsx
 "use client";
 
 import { useEffect, useState } from "react";
@@ -13,23 +14,73 @@ interface Sale {
 
 export default function BlackFridayBanner() {
   const [sale, setSale] = useState<Sale | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchSale() {
       try {
+        setIsLoading(true);
+        setError(null);
+
         const res = await fetch("/api/sale/black-friday");
-        if (!res.ok) return; // handle 404 or server errors
+        // console.log("🔵 API Response status:", res.status);
+
+        if (!res.ok) {
+          console.log("🔴 API Error - Status not OK:", res.status);
+          setError(`API returned ${res.status} ${res.statusText}`);
+          return;
+        }
+
         const data: Sale = await res.json();
-        if (data.isActive) setSale(data);
+        // console.log("🟢 Received sale data:", data);
+
+        // Check if sale is active
+        if (data.isActive) {
+          console.log("✅ Sale is active, displaying banner");
+          setSale(data);
+        } else {
+          console.log("❌ Sale data exists but is not active");
+          setError("Sale exists but is not active");
+        }
       } catch (err) {
-        console.error(err);
+        console.error("💥 Error fetching sale:", err);
+        setError(err instanceof Error ? err.message : "Unknown error occurred");
+      } finally {
+        setIsLoading(false);
+        console.log("⚪ Finished loading, isLoading set to false");
       }
     }
 
     fetchSale();
   }, []);
 
-  if (!sale) return null;
+  // Debug render states
+  console.log(
+    "🎨 Render state - isLoading:",
+    isLoading,
+    "sale:",
+    sale,
+    "error:",
+    error
+  );
+
+  if (isLoading) {
+    console.log("⏳ Still loading, not rendering");
+    return null;
+  }
+
+  if (error) {
+    console.log("🚫 Error occurred:", error);
+    return null;
+  }
+
+  if (!sale) {
+    console.log("📭 No sale data available");
+    return null;
+  }
+
+  console.log("🎉 Rendering banner with sale:", sale);
 
   return (
     <AnimatePresence>
@@ -62,6 +113,7 @@ export default function BlackFridayBanner() {
           </div>
         </div>
       </motion.div>
+      <br />
     </AnimatePresence>
   );
 }

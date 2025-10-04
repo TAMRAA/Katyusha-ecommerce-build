@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               href="/"
               className="text-3xl font-extrabold tracking-tight text-white block mb-4"
             >
-              Trivo
+              Ecommerce App
             </Link>
             <p className="text-gray-400 leading-relaxed max-w-xs">
               Authentic streetwear for those who live the culture. Est. 2022
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col items-center text-center space-y-4">
           {/* Copyright */}
           <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} Trivo Streetwear. All rights
+            &copy; {new Date().getFullYear()} Ecommerce App. All rights
             reserved.
           </p>
 
