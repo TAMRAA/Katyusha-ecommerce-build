@@ -20,9 +20,9 @@ export default async function Home() {
   // );
 
   return (
-    <div>
+    <div className="bg-yellow-50">
       <HeroSlider />
-      <div className="flex flex-col items-center justify-top min-h-screen bg-bg-yellow-50 p-4">
+      <div className="flex flex-col items-center justify-top min-h-screen bg-yellow-50 p-4">
         <ProductsView products={products} categories={categories} />
       </div>
       <PhotoCollage />

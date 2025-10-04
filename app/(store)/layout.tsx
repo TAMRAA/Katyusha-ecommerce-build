@@ -15,7 +15,7 @@ export default async function RootLayout({
   return (
     <ClerkProvider dynamic>
       <html lang="en">
-        <body className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans text-gray-900">
+        <body className="min-h-screen bg-gradient-to-b bg-yellow-50 font-sans text-gray-900">
           <main className="container mx-auto p-6 max-w-6xl bg-yellow-50">
             <Header />
             {children}
