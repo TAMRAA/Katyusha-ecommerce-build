@@ -445,8 +445,8 @@ function Header() {
             href: "/categories/shoes"
         },
         {
-            name: "Jeans",
-            href: "/categories/jeans"
+            name: "Pants",
+            href: "/categories/pants"
         },
         {
             name: "Skateboard",

@@ -1,0 +1,140 @@
+{
+  "node": {
+    "7f00f12327f28b2953c204bd5210e84538b532ba2f": {
+      "workers": {
+        "app/(store)/footer/page": {
+          "moduleId": "776572",
+          "async": false,
+          "exportedName": "detectKeylessEnvDriftAction",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "layer": {
+        "app/(store)/footer/page": "rsc"
+      },
+      "exportedName": "detectKeylessEnvDriftAction",
+      "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "7fae0bd31906083e7dcbac31ea9f256ec34094aaa3": {
+      "workers": {
+        "app/(store)/footer/page": {
+          "moduleId": "776572",
+          "async": false,
+          "exportedName": "invalidateCacheAction",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+        }
+      },
+      "layer": {
+        "app/(store)/footer/page": "action-browser"
+      },
+      "exportedName": "invalidateCacheAction",
+      "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+    },
+    "7f8c1c1f6995aa6e98de0ca345fecbe10d203a66cc": {
+      "workers": {
+        "app/(store)/footer/page": {
+          "moduleId": "776572",
+          "async": false,
+          "exportedName": "createOrReadKeylessAction",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "layer": {
+        "app/(store)/footer/page": "rsc"
+      },
+      "exportedName": "createOrReadKeylessAction",
+      "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "7f7e9ae05357734b7a545c667c0607ee2e005923a4": {
+      "workers": {
+        "app/(store)/footer/page": {
+          "moduleId": "776572",
+          "async": false,
+          "exportedName": "collectKeylessMetadata",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js"
+        }
+      },
+      "layer": {
+        "app/(store)/footer/page": "rsc"
+      },
+      "exportedName": "collectKeylessMetadata",
+      "filename": "node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js"
+    },
+    "7f96ab1427c5a2e1b7cd9825c611420dc3d29fef60": {
+      "workers": {
+        "app/(store)/footer/page": {
+          "moduleId": "776572",
+          "async": false,
+          "exportedName": "formatMetadataHeaders",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js"
+        }
+      },
+      "layer": {
+        "app/(store)/footer/page": "rsc"
+      },
+      "exportedName": "formatMetadataHeaders",
+      "filename": "node_modules/@clerk/nextjs/dist/esm/server/keyless-custom-headers.js"
+    },
+    "7f70f7c7633171b547474bc9dcdd05bd10fa3f5603": {
+      "workers": {
+        "app/(store)/footer/page": {
+          "moduleId": "776572",
+          "async": false,
+          "exportedName": "deleteKeylessAction",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "layer": {
+        "app/(store)/footer/page": "action-browser"
+      },
+      "exportedName": "deleteKeylessAction",
+      "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "7fe733a6e9f933a8977ccb150cc19361c883758c3c": {
+      "workers": {
+        "app/(store)/footer/page": {
+          "moduleId": "776572",
+          "async": false,
+          "exportedName": "syncKeylessConfigAction",
+          "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "layer": {
+        "app/(store)/footer/page": "action-browser"
+      },
+      "exportedName": "syncKeylessConfigAction",
+      "filename": "node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "7f4e69546af491e7d5def87ff4ed0f585fc7ea9b22": {
+      "workers": {
+        "app/(store)/footer/page": {
+          "moduleId": "776572",
+          "async": false,
+          "exportedName": "revalidateSyncTags",
+          "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
+        }
+      },
+      "layer": {
+        "app/(store)/footer/page": "action-browser"
+      },
+      "exportedName": "revalidateSyncTags",
+      "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
+    },
+    "7fdea29212f5ad326be9bb71926138a9a318e9bdf2": {
+      "workers": {
+        "app/(store)/footer/page": {
+          "moduleId": "776572",
+          "async": false,
+          "exportedName": "setPerspectiveCookie",
+          "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
+        }
+      },
+      "layer": {
+        "app/(store)/footer/page": "action-browser"
+      },
+      "exportedName": "setPerspectiveCookie",
+      "filename": "node_modules/@sanity/next-loader/dist/server-actions.js"
+    }
+  },
+  "edge": {}
+}

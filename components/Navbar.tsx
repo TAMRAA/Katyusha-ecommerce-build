@@ -52,7 +52,7 @@ export default function Header() {
 
   const navigation = [
     { name: "Shoes", href: "/categories/shoes" },
-    { name: "Jeans", href: "/categories/jeans" },
+    { name: "Pants", href: "/categories/pants" },
     { name: "Skateboard", href: "/categories/skateboard" },
     { name: "Snowboard", href: "/categories/Snowboard" },
     { name: "Accessori", href: "/categories/Accessori" },

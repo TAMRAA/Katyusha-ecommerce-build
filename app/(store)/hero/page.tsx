@@ -8,9 +8,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const slides = [
   {
     id: 1,
-    image: "/urban-streetwear-fashion-model-wearing-trendy-clot.jpg",
-    title: "New Street Collection",
-    subtitle: "Discover the latest urban fashion trends",
+    image: "/landing.png",
+    title: "JOIN THE SQUAD",
+    subtitle: "For an optimized performance",
     buttonText: "Shop Now",
     buttonLink: "/streetwear",
   },

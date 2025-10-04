@@ -1217,9 +1217,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 const slides = [
     {
         id: 1,
-        image: "/urban-streetwear-fashion-model-wearing-trendy-clot.jpg",
-        title: "New Street Collection",
-        subtitle: "Discover the latest urban fashion trends",
+        image: "/landing.png",
+        title: "JOIN THE SQUAD",
+        subtitle: "For an optimized performance",
         buttonText: "Shop Now",
         buttonLink: "/streetwear"
     },
